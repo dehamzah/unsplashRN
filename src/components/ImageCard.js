@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Image, Text } from 'react-native';
+import HeartButton from './HeartButton';
 
 const ImageCard = ({ srcImage, srcImageAuthor, authorName }) => (
     <View style={styles.container}>
@@ -8,12 +9,17 @@ const ImageCard = ({ srcImage, srcImageAuthor, authorName }) => (
             style={styles.image}
             resizeMode="cover"
         />
-        <View style={styles.authorContainer}>
-            <Image
-                source={srcImageAuthor}
-                style={styles.authorImage}
-            />
-            <Text style={styles.authorName}>{authorName}</Text>
+        <View style={styles.metaContainer}>
+            <View style={styles.authorContainer}>
+                <Image
+                    source={srcImageAuthor}
+                    style={styles.authorImage}
+                />
+                <Text style={styles.authorName}>{authorName}</Text>
+            </View>
+            <View>
+                <HeartButton />
+            </View>
         </View>
     </View>
 );
@@ -27,8 +33,13 @@ const styles = StyleSheet.create({
         width: null,
         height: 200
     },
-    authorContainer: {
+    metaContainer: {
         paddingVertical: 8,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
+    authorContainer: {
         flexDirection: 'row',
         alignItems: 'center'
     },
