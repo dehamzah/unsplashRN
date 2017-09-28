@@ -1,6 +1,11 @@
 import React from 'react';
-import { AppRegistry, Text } from 'react-native';
+import { AppRegistry, View } from 'react-native';
+import Header from './components/Header';
 
-const App = () => <Text>Hello World!</Text>;
+const App = () => (
+    <View>
+        <Header />
+    </View>
+);
 
 AppRegistry.registerComponent('unsplashRN', () => App);
