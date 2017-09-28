@@ -6,7 +6,11 @@ import ImageCard from './components/ImageCard';
 const App = () => (
     <View>
         <Header title="Unsplash" />
-        <ImageCard />
+        <ImageCard
+            srcImage={require('./images/01.jpeg')}
+            srcImageAuthor={require('./images/user-01.jpeg')}
+            authorName="Napaki Muttaqin"
+        />
     </View>
 );
 

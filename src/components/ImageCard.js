@@ -1,19 +1,19 @@
 import React from 'react';
 import { StyleSheet, View, Image, Text } from 'react-native';
 
-const ImageCard = () => (
+const ImageCard = ({ srcImage, srcImageAuthor, authorName }) => (
     <View style={styles.container}>
         <Image 
-            source={require('../images/01.jpeg')}
+            source={srcImage}
             style={styles.image}
             resizeMode="cover"
         />
         <View style={styles.authorContainer}>
             <Image
-                source={require('../images/user-01.jpeg')}
+                source={srcImageAuthor}
                 style={styles.authorImage}
             />
-            <Text style={styles.authorName}>Napaki Muttaqin</Text>
+            <Text style={styles.authorName}>{authorName}</Text>
         </View>
     </View>
 );
