@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const Header = () => (
+const Header = ({ title }) => (
     <View style={styles.container}>
-        <Text style={styles.title}>Unsplash</Text>
+        <Text style={styles.title}>{title}</Text>
     </View>
 );
 

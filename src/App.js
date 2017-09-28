@@ -4,7 +4,7 @@ import Header from './components/Header';
 
 const App = () => (
     <View>
-        <Header />
+        <Header title="Unsplash" />
     </View>
 );
 
