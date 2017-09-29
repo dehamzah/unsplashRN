@@ -35,7 +35,6 @@ class ImageList extends Component {
 
         return (
             <FlatList
-                style={{ marginBottom: 70 }}
                 data={this.state.photos}
                 renderItem={({ item }) => {
                     const { urls, user } = item;
