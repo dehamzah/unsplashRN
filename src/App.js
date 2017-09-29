@@ -1,14 +1,10 @@
 import React from 'react';
 import { AppRegistry, View } from 'react-native';
-import Header from './components/Header';
-import ImageCard from './components/ImageCard';
-import ImageList from './components/ImageList';
+import { StackNavigator } from 'react-navigation';
+import HomeScreen from './components/HomeScreen';
 
-const App = () => (
-    <View>
-        <Header title="Unsplash" />
-        <ImageList />
-    </View>
-);
+const App = StackNavigator({
+    Home: { screen: HomeScreen }
+});
 
 AppRegistry.registerComponent('unsplashRN', () => App);
