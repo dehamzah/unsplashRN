@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Button } from 'react-native';
 import ImageList from './ImageList';
 
 export default class HomeScreen extends Component {
@@ -8,8 +8,14 @@ export default class HomeScreen extends Component {
     }
 
     render() {
+        const { navigate } = this.props.navigation;
+
         return (
             <View>
+                <Button
+                    title="Go to Detail Screen"
+                    onPress={() => navigate('Detail')}
+                />
                 <ImageList />
             </View>
         );
