@@ -5,14 +5,14 @@ import HeartButton from './HeartButton';
 const ImageCard = ({ srcImage, srcImageAuthor, authorName }) => (
     <View style={styles.container}>
         <Image 
-            source={srcImage}
+            source={{ uri: srcImage }}
             style={styles.image}
             resizeMode="cover"
         />
         <View style={styles.metaContainer}>
             <View style={styles.authorContainer}>
                 <Image
-                    source={srcImageAuthor}
+                    source={{ uri: srcImageAuthor }}
                     style={styles.authorImage}
                 />
                 <Text style={styles.authorName}>{authorName}</Text>
