@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, View, Textl, ActivityIndicator } from 'react-native';
+import { FlatList, ActivityIndicator } from 'react-native';
 import ImageCard from './ImageCard';
 import { client_id } from 'unsplashRN/secret.json';
 
@@ -8,7 +8,8 @@ class ImageList extends Component {
         super(props);
 
         this.state = {
-            photos: []
+            photos: [],
+            isLoading: true
         }
     }
 
@@ -21,10 +22,17 @@ class ImageList extends Component {
         let photos = await res.json();
         //console.log('photos', photos);
 
-        this.setState({ photos });
+        this.setState({ 
+            photos,
+            isLoading: false
+        });
     }
 
     render() {
+        if (this.state.isLoading) {
+            return <ActivityIndicator size="large" color="#4c4c4c" style={{ marginTop: 55 }}/>
+        }
+
         return (
             <FlatList
                 style={{ marginBottom: 70 }}
